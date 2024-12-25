@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pemesanan</title>
+    <link rel="stylesheet" href="form-pemesanan.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+
+    <form id="pemesananForm">
+        <table>
+            <tr>
+                <th colspan="2">
+                    <h1>Form Pemesanan</h1>
+                </th>
+            </tr>
+            <tr>
+                <td>Id Pemesan</td>
+                <td><input type="number" name="id_pemesan" required></td>
+            </tr>
+            <tr>
+                <td>Nama Pemesan</td>
+                <td><input type="text" name="nama_pemesan" required></td>
+            </tr>
+            <tr>
+                <td>Nomor Identitas</td>
+                <td><input type="text" name="nomor_identitas" required maxlength="16" pattern="\d{16}"
+                        title="Isian salah, harus 16 digit"></td>
+            </tr>
+            <tr>
+                <td>Jenis Kelamin</td>
+                <td class="radio-group">
+                    <label><input type="radio" name="jenis_kelamin" value="L" required> Laki-laki</label>
+                    <label><input type="radio" name="jenis_kelamin" value="P" required> Perempuan</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Tipe Kamar</td>
+                <td>
+                    <select name="tipe_kamar" id="tipe_kamar" required>
+                        <option value="-">--Pilih--</option>
+                        <option value="standar">STANDAR</option>
+                        <option value="deluxe">DELUXE</option>
+                        <option value="family">FAMILY</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Harga</td>
+                <td><input type="text" name="harga_kamar" id="harga_kamar" readonly></td>
+            </tr>
+            <tr>
+                <td>Tanggal Pesan</td>
+                <td><input type="date" name="tanggal_pesan" required></td>
+            </tr>
+            <tr>
+                <td>Durasi Menginap</td>
+                <td><input type="number" name="durasi_menginap" id="durasi_menginap" required min="1"> Hari</td>
+            </tr>
+            <tr>
+                <td>Termasuk Breakfast</td>
+                <td class="checkbox-group">
+                    <label><input type="checkbox" name="breakfast" value="Ya"> Ya</label>
+                    <label><input type="checkbox" name="breakfast" value="Tidak"> Tidak</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Total Bayar</td>
+                <td><input type="text" name="total_bayar" id="total_bayar" readonly></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <button type="submit" class="btn-simpan">SIMPAN</button>
+                    <button type="reset" class="btn-batal">Batal</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div id="resume" class="resume">
+        <h2>Resume Pemesanan</h2>
+        <p id="resumeDetails"></p>
+    </div>
+
+    <script src="form-pemesanan.js"></script>
+</body>
+
+</html>
